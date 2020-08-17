@@ -17,3 +17,10 @@ cd client
 npm start
 ````
 
+## Test
+
+````
+cd client
+npm test
+````
+
