@@ -24,3 +24,5 @@ cd client
 npm test
 ````
 
+By Leigh Silverstein
+
