@@ -5,7 +5,7 @@
 import React from 'react';
 import useSWR from 'swr';
 import StatisticCard from './StatisticCard';
-import { Grid, Divider } from '@material-ui/core';
+import { Grid, Divider, Typography } from '@material-ui/core';
 import { Chart } from 'react-charts';
 import moment from 'moment';
 
@@ -70,8 +70,8 @@ function Dashboard() {
    */
   const axes = React.useMemo(
     () => [
-      { primary: true, type: 'ordinal', position: 'bottom' },
-      { type: 'linear', position: 'left' }
+      { primary: true, type: 'ordinal', position: 'bottom', label: "Time" },
+      { type: 'linear', position: 'left', label: 'Amount' }
     ],
     []
   )
@@ -82,6 +82,9 @@ function Dashboard() {
   if (countError || averageError || randomError) return <div>failed to load</div>
   if (count === undefined || averages === undefined) return <div>loading...</div>
   return <div>
+    <Typography style={{
+      margin: '2rem',
+    }} variant="h5" component="h2">Aggregate Micrograph Information</Typography>
     <Grid direction="row" alignItems="center" justify="center" spacing={2} container>
       <Grid item>
         <StatisticCard name="Total Micrographs" value={count}/>
@@ -91,6 +94,9 @@ function Dashboard() {
       }
     </Grid>
     <Divider style={{marginTop: '4rem'}} />
+    <Typography style={{
+      margin: '2rem',
+    }} variant="h5" component="h2">Live Feed</Typography>
     <Grid style={{marginTop: '4rem'}} container justify="center" >
       <Grid item>
         <div style={{width: '500px', height: '300px'}}>

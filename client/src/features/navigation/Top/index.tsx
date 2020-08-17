@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, makeStyles } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, makeStyles, Tooltip } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { Home } from '@material-ui/icons';
 
@@ -22,7 +22,7 @@ function NavigationTop() {
           Structura
         </Typography>
         {
-          <Link to='/'><IconButton><Home/></IconButton> </Link>
+          <Tooltip title="Go to main dashboard"><Link to='/'><IconButton><Home/></IconButton> </Link></Tooltip>
         }
       </Toolbar>
     </AppBar>
